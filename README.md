@@ -5,10 +5,6 @@
 * Current version: **0.1.0**
 * License: **MIT**
 
-## Summary
-
-[...]
-
 ## How To Use
 
 ### Using [...]
@@ -17,22 +13,26 @@
 
 ### Using the Package Registry Server
 
-Follow the instructions inside [here](https://cutt.ly/ukvj1c8) and the package **ActionCode-Pause System** will be available for you to install using the **Package Manager** windows.
+Follow the instructions inside [here](https://cutt.ly/ukvj1c8) and the package **ActionCode-Pause System** 
+will be available for you to install using the **Package Manager** windows.
 
 ### Using the Git URL
 
 You will need a **Git client** installed on your computer with the Path variable already set. 
 
-Use the **Package Manager** "Add package from git URL..." feature or add manually this line inside `dependencies` attribute: 
+- Use the **Package Manager** "Add package from git URL..." feature and paste this URL: `https://github.com/HyagoOliveira/PauseSystem.git`
+
+- You can also manually modify you `Packages/manifest.json` file and add this line inside `dependencies` attribute: 
 
 ```json
-"com.actioncode.pause-system":"https://bitbucket.org/nostgameteam/pause-system.git"
+"com.actioncode.energy-system":"https://github.com/HyagoOliveira/PauseSystem.git"
 ```
 
 ---
 
 **Hyago Oliveira**
 
+[GitHub](https://github.com/HyagoOliveira) -
 [BitBucket](https://bitbucket.org/HyagoGow/) -
-[Unity Connect](https://connect.unity.com/u/hyago-oliveira) -
+[LinkedIn](https://www.linkedin.com/in/hyago-oliveira/) -
 <hyagogow@gmail.com>

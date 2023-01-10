@@ -6,12 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.0.1] - 2020-01-23
+## [0.1.0] - 2020-01-23
 ### Added
 - Add CHANGELOG
 - Add README
 - Add initial files
 - Initial commit
 
-[Unreleased]: https://bitbucket.org/nostgameteam/pause-system/branches/compare/master%0D0.0.1
-[0.0.1]: https://bitbucket.org/nostgameteam/pause-system/src/0.0.1/
+[Unreleased]: https://github.com/HyagoOliveira/PauseSystem/compare/0.1.0...main
+[0.1.0]: https://github.com/HyagoOliveira/PauseSystem/tree/0.1.0/

@@ -9,15 +9,17 @@
     "System"
   ],
   "category": "Scripts",
-  "dependencies": {},
+  "homepage": "https://github.com/HyagoOliveira/PauseSystem#readme",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/nostgameteam/pause-system#readme",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/nostgameteam/pause-system.git"
+    "url": "https://github.com/HyagoOliveira/PauseSystem.git"
   },
+  "documentationUrl": "https://github.com/HyagoOliveira/PauseSystem#readme",
+  "changelogUrl": "https://github.com/HyagoOliveira/PauseSystem/CHANGELOG.md",
   "author": {
     "name": "Hyago Oliveira",
     "email": "hyagogow@gmail.com"
-  }
+  },
+  "dependencies": {}
 }
