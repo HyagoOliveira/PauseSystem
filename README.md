@@ -1,7 +1,7 @@
 # Pause System
 
 * Pause System for Unity games.
-* Unity minimum version: **2018.3**
+* Unity minimum version: **2021.2**
 * Current version: **0.1.0**
 * License: **MIT**
 
