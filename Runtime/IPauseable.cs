@@ -1,7 +1,7 @@
 namespace ActionCode.PauseSystem
 {
     /// <summary>
-    /// Interface used on objects able to Pause and Resume.
+    /// Interface used on objects able to Pause.
     /// </summary>
     public interface IPauseable
     {
@@ -9,10 +9,5 @@ namespace ActionCode.PauseSystem
         /// Pauses the instance.
         /// </summary>
         void Pause();
-
-        /// <summary>
-        /// Resumes the instance.
-        /// </summary>
-        void Resume();
     }
 }
