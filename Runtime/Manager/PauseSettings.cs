@@ -12,12 +12,24 @@ namespace ActionCode.PauseSystem
         [SerializeField, Tooltip("Whether to stop the TimeScale when pause.")]
         private bool stopTimeScale = true;
         
+        public bool IsPaused { get; private set; }
+        
         private readonly List<IPauseable> pauseables = new();
 
         internal void Initialize () => pauseables.Clear();
+
+        /// <summary>
+        /// Toggles between <see cref="Pause"/> and <see cref="Resume"/>.
+        /// </summary>
+        public void Toggle ()
+        {
+            if (IsPaused) Resume();
+            else Pause();
+        }
         
         public void Pause()
         {
+            IsPaused = true;
             if (stopTimeScale) Time.timeScale = 0f;
 
             foreach (var pauseable in pauseables)
@@ -28,6 +40,7 @@ namespace ActionCode.PauseSystem
 
         public void Resume()
         {
+            IsPaused = false;
             if (stopTimeScale) Time.timeScale = 1f;
 
             foreach (var pauseable in pauseables)
