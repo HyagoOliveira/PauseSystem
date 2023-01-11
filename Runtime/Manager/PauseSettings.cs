@@ -36,12 +36,20 @@ namespace ActionCode.PauseSystem
             }
         }
 
+        /// <summary>
+        /// Registers the given paused instance to be paused when <see cref="Pause"/> is called.
+        /// </summary>
+        /// <param name="pauseable">The pauseable instance.</param>
         public void Register(IPauseable pauseable)
         {
             var canAdd = !pauseables.Contains(pauseable);
             if (canAdd) pauseables.Add(pauseable);
         }
 
+        /// <summary>
+        /// Unregisters the given paused instance.
+        /// </summary>
+        /// <param name="pauseable">The pauseable instance.</param>
         public void Unregister(IPauseable pauseable)
         {
             var canRemove = pauseables.Contains(pauseable);
