@@ -16,7 +16,11 @@ namespace ActionCode.PauseSystem
         
         private readonly List<IPauseable> pauseables = new();
 
-        internal void Initialize () => pauseables.Clear();
+        internal void Initialize ()
+        {
+            IsPaused = false;
+            pauseables.Clear();
+        }
 
         /// <summary>
         /// Toggles between <see cref="Pause"/> and <see cref="Resume"/>.
@@ -29,13 +33,13 @@ namespace ActionCode.PauseSystem
         
         public void Pause()
         {
-            IsPaused = true;
-            if (stopTimeScale) Time.timeScale = 0f;
-
             foreach (var pauseable in pauseables)
             {
                 pauseable.Pause();
             }
+
+            IsPaused = true;
+            if (stopTimeScale) Time.timeScale = 0f;
         }
 
         public void Resume()
