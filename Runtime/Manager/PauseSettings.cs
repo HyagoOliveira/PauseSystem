@@ -6,7 +6,7 @@ namespace ActionCode.PauseSystem
     /// <summary>
     /// Settings class for the Pause System. Use it to subscribe <see cref="IPauseable"/> instances.
     /// </summary>
-    [CreateAssetMenu(fileName = "PauseSettings", menuName = "ActionCode/Pause Settings", order = 110)]
+    [CreateAssetMenu(fileName = "PauseSettings", menuName = "ActionCode/Pause Manager/Settings", order = 110)]
     public sealed class PauseSettings : ScriptableObject, IPauseable
     {
         [SerializeField, Tooltip("Whether to stop the TimeScale when pause.")]
