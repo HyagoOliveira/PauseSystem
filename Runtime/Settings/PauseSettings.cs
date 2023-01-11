@@ -8,10 +8,10 @@ namespace ActionCode.PauseSystem
     /// Use it to subscribe to <see cref="OnPaused"/> and <see cref="OnResumed"/> events.
     /// </summary>
     [CreateAssetMenu(fileName = "PauseSettings", menuName = "ActionCode/Pause Manager/Settings", order = 110)]
-    public sealed class PauseSettings : ScriptableObject
+    public sealed class PauseSettings : ScriptableObject, IPauseSettings
     {
-        [SerializeField, Tooltip("Whether to stop the TimeScale when pause.")]
-        private bool stopTimeScale = true;
+        [field: SerializeField, Tooltip("Whether to stop the TimeScale when paused.")]
+        public bool StopTimeScale { get; private set; } = true;
 
         public event Action OnPaused;
         public event Action OnResumed;
@@ -19,9 +19,6 @@ namespace ActionCode.PauseSystem
         [field: NonSerialized]
         public bool IsPaused { get; private set; }
         
-        /// <summary>
-        /// Toggles between <see cref="Pause"/> and <see cref="Resume"/>.
-        /// </summary>
         public void Toggle ()
         {
             if (IsPaused) Resume();
@@ -33,13 +30,13 @@ namespace ActionCode.PauseSystem
             OnPaused?.Invoke();
 
             IsPaused = true;
-            if (stopTimeScale) Time.timeScale = 0f;
+            if (StopTimeScale) Time.timeScale = 0f;
         }
 
         public void Resume()
         {
             IsPaused = false;
-            if (stopTimeScale) Time.timeScale = 1f;
+            if (StopTimeScale) Time.timeScale = 1f;
 
             OnResumed?.Invoke();
         }
