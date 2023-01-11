@@ -10,7 +10,5 @@ namespace ActionCode.PauseSystem
     {
         [SerializeField, Tooltip("The Pause Settings asset reference.")]
         private PauseSettings settings;
-
-        private void Awake () => settings.Initialize();
     }
 }

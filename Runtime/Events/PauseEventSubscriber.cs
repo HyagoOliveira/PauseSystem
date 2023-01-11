@@ -6,7 +6,7 @@ namespace ActionCode.PauseSystem
     /// <summary>
     /// Subscriber class for <see cref="UnityEvent"/>.
     /// </summary>
-    public sealed class PauseEventSubscriber : MonoBehaviour, IPauseable
+    public sealed class PauseEventSubscriber : MonoBehaviour
     {
         [SerializeField, Tooltip("The Pause Settings asset reference.")]
         private PauseSettings settings;
@@ -21,10 +21,19 @@ namespace ActionCode.PauseSystem
         /// </summary>
         public UnityEvent OnResume { get; } = new();
 
-        private void OnEnable() => settings.Register(this);
-        private void OnDisable() => settings.Unregister(this);
+        private void OnEnable ()
+        {
+            settings.OnPaused += HandlePaused;
+            settings.OnResumed += HandleResumed;
+        }
 
-        public void Pause() => OnPause?.Invoke();
-        public void Resume() => OnResume?.Invoke();
+        private void OnDisable ()
+        {
+            settings.OnPaused -= HandlePaused;
+            settings.OnResumed -= HandleResumed;
+        }
+
+        private void HandlePaused() => OnPause?.Invoke();
+        private void HandleResumed() => OnResume?.Invoke();
     }
 }
