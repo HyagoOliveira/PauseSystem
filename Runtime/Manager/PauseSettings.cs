@@ -4,17 +4,14 @@ using System.Collections.Generic;
 namespace ActionCode.PauseSystem
 {
     /// <summary>
-    /// Settings class for 
+    /// Settings class for the Pause System. Use it to subscribe <see cref="IPauseable"/> instances.
     /// </summary>
     [CreateAssetMenu(fileName = "PauseSettings", menuName = "ActionCode/Pause Settings", order = 110)]
     public sealed class PauseSettings : ScriptableObject, IPauseable
     {
         private readonly List<IPauseable> pauseables = new();
 
-        internal void Initialize ()
-        {
-            pauseables.Clear();
-        }
+        internal void Initialize () => pauseables.Clear();
         
         public void Pause()
         {
