@@ -29,7 +29,7 @@ namespace YourNamespace
 	    
 	    private void OnEnable ()
 	    {
-            settings.OnPaused += HandlePaused;
+		    settings.OnPaused += HandlePaused;
 		    settings.OnResumed += HandleResumed;
 	    }
         
