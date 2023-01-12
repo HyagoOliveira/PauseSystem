@@ -5,9 +5,53 @@
 * Current version: **0.1.0**
 * License: **MIT**
 
+## Summary
+
+Easily subscribe classes to Pause/Resume events and execute code when they happen.
+
 ## How To Use
 
-### Using [...]
+### Using Pause System Scriptable Object
+
+Create a new Pause System asset by using the Create menu, **ActionCode > Pause Manager > Settings** or using the default one provided on the [Settings folder](/Settings).
+
+You can reference the `PauseSystem` and subscribe your classes to the `OnPaused` and `OnResumed` events, just like the following:
+
+```csharp
+using UnityEngine;
+using ActionCode.PauseSystem;
+
+namespace YourNamespace
+{
+    public sealed class PauseExample : MonoBehaviour 
+    {
+	    [SerializeField] private PauseSettings settings;
+	    
+	    private void OnEnable ()
+	    {
+		    settings.OnPaused += HandlePaused;
+		    settings.OnResumed += HandleResumed;
+	    }
+        
+	    private void OnDisable ()
+	    {
+		    settings.OnPaused += HandlePaused;
+		    settings.OnResumed += HandleResumed;
+	    }
+	    
+	    private void HandlePaused () => print("The Game was Paused.");
+	    
+	    private void HandleResumed () => print("The Game was Resumed.");
+    }
+}
+```
+
+After that, you just have to call the `Pause()` and `Resume()` functions, or the `Toggle()` for a Pause button behaviour.
+
+### Pause/Resume AudioSource Components
+
+Pause and resume AudioSource components is a very common feature. 
+Thus, the [PauseAudioSource](/Runtime/Components/PauseAudioSource.cs) component was created to easily do that.
 
 ## Installation
 
