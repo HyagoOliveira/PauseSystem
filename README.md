@@ -29,14 +29,14 @@ namespace YourNamespace
 	    
 	    private void OnEnable ()
 	    {
-		    settings.OnPaused += HandlePaused;
+            settings.OnPaused += HandlePaused;
 		    settings.OnResumed += HandleResumed;
 	    }
         
 	    private void OnDisable ()
 	    {
-		    settings.OnPaused += HandlePaused;
-		    settings.OnResumed += HandleResumed;
+		    settings.OnPaused -= HandlePaused;
+		    settings.OnResumed -= HandleResumed;
 	    }
 	    
 	    private void HandlePaused () => print("The Game was Paused.");
@@ -45,6 +45,8 @@ namespace YourNamespace
     }
 }
 ```
+
+> **Attention**: do not forget to unsubscribe the events since it is not done automatically
 
 After that, you just have to call the `Pause()` and `Resume()` functions, or the `Toggle()` for a Pause button behaviour.
 
