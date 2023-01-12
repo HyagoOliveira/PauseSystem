@@ -26,8 +26,8 @@ namespace ActionCode.PauseSystem
         
 	    private void OnDisable ()
 	    {
-		    settings.OnPaused += HandlePaused;
-		    settings.OnResumed += HandleResumed;
+		    settings.OnPaused -= HandlePaused;
+		    settings.OnResumed -= HandleResumed;
 	    }
 	    
 	    private void HandlePaused ()
