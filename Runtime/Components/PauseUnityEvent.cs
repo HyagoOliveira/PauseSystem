@@ -4,9 +4,10 @@ using UnityEngine.Events;
 namespace ActionCode.PauseSystem
 {
     /// <summary>
-    /// Subscriber class for <see cref="UnityEvent"/>.
+    /// Pause class for <see cref="UnityEvent"/>.
+    /// <para>It will fire <see cref="OnPause"/> and <see cref="OnResume"/> events.</para>
     /// </summary>
-    public sealed class PauseEventSubscriber : MonoBehaviour
+    public sealed class PauseUnityEvent : MonoBehaviour
     {
         [SerializeField, Tooltip("The Pause Settings asset reference.")]
         private PauseSettings settings;
