@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Awaitable Coroutines package dependency
 
+### Fixed
+- Time.deltaTime is not 0F when OnResume is invoked
+
 ## [1.0.0] - 2022-01-12
 ### Added
 - PauseAudioSource

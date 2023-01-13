@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using System.Collections;
+using ActionCode.AwaitableCoroutines;
 
 namespace ActionCode.PauseSystem
 {
@@ -36,8 +38,21 @@ namespace ActionCode.PauseSystem
         public void Resume()
         {
             IsPaused = false;
-            if (StopTimeScale) Time.timeScale = 1f;
+            if (StopTimeScale)
+            {
+                Time.timeScale = 1f;
+                // All Time properties will be updated only in the next frame.
+                _ = AwaitableCoroutine.Run(WaitAndInvokeResume());
+                return;
+            }
+            
+            OnResumed?.Invoke();
+        }
 
+        private IEnumerator WaitAndInvokeResume ()
+        {
+            // Time.deltaTime would be 0F if not waiting for the Fixed Update.
+            yield return new WaitForFixedUpdate();
             OnResumed?.Invoke();
         }
     }
