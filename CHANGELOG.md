@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Awaitable Coroutines package dependency
+- PauseBehaviours
 
 ### Fixed
 - Time.deltaTime is not 0F when OnResume is invoked
