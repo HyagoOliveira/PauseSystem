@@ -20,5 +20,8 @@
   "author": {
     "name": "Hyago Oliveira",
     "email": "hyagogow@gmail.com"
+  },
+  "dependencies": {
+    "com.actioncode.awaitable-coroutines": "1.0.0"
   }
 }

@@ -1,7 +1,9 @@
 {
     "name": "ActionCode.PauseSystem",
     "rootNamespace": "ActionCode.PauseSystem",
-    "references": [],
+    "references": [
+        "GUID:5ab4c1c923afe5f4e9b62c7aa3cf6288"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
