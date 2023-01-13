@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.0] - 2022-01-13
 ### Added
 - Awaitable Coroutines package dependency
 - PauseBehaviours
@@ -30,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add initial files
 - Initial commit
 
-[Unreleased]: https://github.com/HyagoOliveira/PauseSystem/compare/1.0.0...main
+[Unreleased]: https://github.com/HyagoOliveira/PauseSystem/compare/1.1.0...main
+[1.1.0]: https://github.com/HyagoOliveira/PauseSystem/tree/1.1.0/
 [1.0.0]: https://github.com/HyagoOliveira/PauseSystem/tree/1.0.0/
 [0.1.0]: https://github.com/HyagoOliveira/PauseSystem/tree/0.1.0/

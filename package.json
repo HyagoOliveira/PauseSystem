@@ -1,7 +1,7 @@
 {
   "name": "com.actioncode.pause-system",
   "displayName": "ActionCode-Pause System",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "unity": "2021.2",
   "description": "This package contains a Pause System for Unity games.",
   "keywords": [
