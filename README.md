@@ -57,6 +57,10 @@ After that, you just have to call the `Pause()` and `Resume()` functions, or the
 Pause and resume AudioSource components is a very common feature. 
 Thus, the [PauseAudioSource](/Runtime/Components/PauseAudioSource.cs) component was created to easily do that.
 
+### Pause/Resume other Components
+
+You can use [PauseBehaviours](/Runtime/Components/PauseBehaviours.cs) component to pause and resume other components serialized on the `behaviours` array.
+
 ## Installation
 
 ### Using the Package Registry Server
