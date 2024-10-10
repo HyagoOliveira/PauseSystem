@@ -77,7 +77,7 @@ You will need a **Git client** installed on your computer with the Path variable
 - You can also manually modify you `Packages/manifest.json` file and add this line inside `dependencies` attribute: 
 
 ```json
-"com.actioncode.energy-system":"https://github.com/HyagoOliveira/PauseSystem.git"
+"com.actioncode.pause-system":"https://github.com/HyagoOliveira/PauseSystem.git"
 ```
 
 ---
