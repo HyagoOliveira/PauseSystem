@@ -6,13 +6,13 @@ namespace ActionCode.PauseSystem
     /// Pauses and resumes all AudioSource components.
     /// </summary>
     [DisallowMultipleComponent]
+    [RequireComponent(typeof(AudioSource))]
     public sealed class PauseAudioSource : MonoBehaviour
     {
-        [SerializeField, Tooltip("The local AudioSource components. They will be paused/resumed.")]
-        private AudioSource[] sources;
+        [SerializeField, Tooltip("The local AudioSource component. It will be paused/resumed.")]
+        private AudioSource source;
 
-        private void Reset() =>
-            sources = GetComponentsInChildren<AudioSource>(includeInactive: true);
+        private void Reset() => source = GetComponent<AudioSource>();
 
         private void OnEnable()
         {
@@ -26,20 +26,7 @@ namespace ActionCode.PauseSystem
             PauseManager.OnResumed -= HandleResumed;
         }
 
-        private void HandlePaused()
-        {
-            foreach (var source in sources)
-            {
-                source.Pause();
-            }
-        }
-
-        private void HandleResumed()
-        {
-            foreach (var source in sources)
-            {
-                source.UnPause();
-            }
-        }
+        private void HandlePaused() => source.Pause();
+        private void HandleResumed() => source.UnPause();
     }
 }

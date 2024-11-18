@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- Refact ScriptableObject PauseSettings to static class PauseManager
+- Refact ScriptableObject PauseSettings -> static class PauseManager
+- Rename PauseAudioSource -> PauseAudioSources
 
 ### Removed
 - IPauseSettings interface
