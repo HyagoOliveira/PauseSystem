@@ -11,11 +11,6 @@ namespace ActionCode.PauseSystem
         [SerializeField, Tooltip("All local Behaviour components. They will be paused/resumed.")]
         private Behaviour[] behaviours;
 
-        private void Reset()
-        {
-            behaviours = GetComponentsInChildren<Behaviour>(includeInactive: true);
-        }
-
         private void OnEnable()
         {
             PauseManager.OnPaused += HandlePaused;
