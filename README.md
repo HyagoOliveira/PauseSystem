@@ -13,11 +13,9 @@ Easily subscribe classes to Pause/Resume events and execute code when they happe
 
 ## How To Use
 
-### Using Pause System Scriptable Object
+### Using Pause Manager static class
 
-Create a new Pause System asset by using the Create menu, **ActionCode > Pause Manager > Settings** or using the default one provided on the [Settings folder](/Settings).
-
-You can reference the `PauseSystem` and subscribe your classes to the `OnPaused` and `OnResumed` events, just like the following:
+You can reference the `PauseManager` and subscribe your classes to the `OnPaused` and `OnResumed` events, just like the following:
 
 ```csharp
 using UnityEngine;
@@ -27,22 +25,19 @@ namespace YourNamespace
 {
     public sealed class PauseExample : MonoBehaviour 
     {
-	    [SerializeField] private PauseSettings settings;
-	    
 	    private void OnEnable ()
 	    {
-		    settings.OnPaused += HandlePaused;
-		    settings.OnResumed += HandleResumed;
+		    PauseManager.OnPaused += HandlePaused;
+		    PauseManager.OnResumed += HandleResumed;
 	    }
         
 	    private void OnDisable ()
 	    {
-		    settings.OnPaused -= HandlePaused;
-		    settings.OnResumed -= HandleResumed;
+		    PauseManager.OnPaused -= HandlePaused;
+		    PauseManager.OnResumed -= HandleResumed;
 	    }
 	    
-	    private void HandlePaused () => print("The Game was Paused.");
-	    
+	    private void HandlePaused () => print("The Game was Paused.");	    
 	    private void HandleResumed () => print("The Game was Resumed.");
     }
 }
@@ -50,12 +45,12 @@ namespace YourNamespace
 
 > **Attention**: do not forget to unsubscribe the events since it is not done automatically
 
-After that, you just have to call the `Pause()` and `Resume()` functions, or the `Toggle()` for a Pause button behaviour.
+After that, you just have to call the `Pause()`, `Resume()` or `Toggle()` funcion from `PauseManager`.
 
 ### Pause/Resume AudioSource Components
 
 Pause and resume AudioSource components is a very common feature. 
-Thus, the [PauseAudioSource](/Runtime/Components/PauseAudioSource.cs) component was created to easily do that.
+Thus, the [PauseAudioSources](/Runtime/Components/PauseAudioSources.cs) component was created to easily do that.
 
 ### Pause/Resume other Components
 
