@@ -2,7 +2,7 @@
 
 * Pause System for Unity games.
 * Unity minimum version: **2021.2**
-* Current version: **1.1.0**
+* Current version: **1.2.0**
 * License: **MIT**
 * Dependencies:
 	- [com.actioncode.awaitable-coroutines](https://github.com/HyagoOliveira/AwaitableCoroutines/tree/1.0.0)
